@@ -1,12 +1,15 @@
-/**
-*
-*
-*
-*
-*
+/** \file Program_For_FinalExam_SD2.cpp
+*	\brief	
+*	\details	
+*	\author
+*	\version
+*	\date
+*	\copyright
+* 
 */
 
 #include <iostream>
+#include <cassert>
 #include <iomanip>
 
 using namespace std;
@@ -15,10 +18,16 @@ void FillMatrix(const int, const int);
 void ShowMatrix(const int, const int);
 void SumNegative(const int, const int);
 
-const int SIZE_ROW = 5;
-const int SIZE_COL = 3;
-double matrix[SIZE_COL][SIZE_ROW] = {0};
+const int SIZE_ROW = 3;
+const int SIZE_COL = 5;
+double matrix[SIZE_ROW][SIZE_COL] = {0};
 
+
+/**
+ * <code>main</code> is the main function of this program.
+ * <BR>
+ * @return Returns 0 if success, any other value otherwise.
+ */
 int main()
 {
 	int choice = 0;
@@ -37,13 +46,13 @@ int main()
 		switch (choice)
 		{
 		case 1:
-			FillMatrix(SIZE_COL, SIZE_ROW);
+			FillMatrix(SIZE_ROW, SIZE_COL);
 			break;
 		case 2:
-			ShowMatrix(SIZE_COL, SIZE_ROW);
+			ShowMatrix(SIZE_ROW, SIZE_COL);
 			break;
 		case 3:
-			SumNegative(SIZE_COL, SIZE_ROW);
+			SumNegative(SIZE_ROW, SIZE_COL);
 			break;
 		case 4:
 			cout << "Have a nice day!" << endl;
@@ -55,7 +64,12 @@ int main()
 	} while(choice != 4);
 }
 
-
+/**
+ * <code>FillMatrix</code> Fills a matrix with entered values
+ * <BR>
+ * @param SIZE1 Constant size of rows in matrix
+ * @param SIZE2 Constant size of columns in matrix
+ */
 void FillMatrix(const int SIZE1,const int SIZE2)
 {
 	bool isInputCorrect;
@@ -77,6 +91,13 @@ void FillMatrix(const int SIZE1,const int SIZE2)
 	}
 
 }
+
+/**
+ * <code>ShowMatrix</code> Shows a current matrix
+ * <BR>
+ * @param SIZE1 Constant size of rows in matrix
+ * @param SIZE2 Constant size of columns in matrix
+ */
 void ShowMatrix(const int SIZE1, const int SIZE2)
 {
 	for (int i = 0; i < SIZE1; i++)
@@ -89,6 +110,13 @@ void ShowMatrix(const int SIZE1, const int SIZE2)
 		cout << endl;
 	}
 }
+
+/**
+ * <code>SumNegative</code> Calculates a sum of all negatives numbers in matrix
+ * <BR>
+ * @param SIZE1 Constant size of rows in matrix
+ * @param SIZE2 Constant size of columns in matrix
+ */
 void SumNegative(const int SIZE1, const int SIZE2)
 {
 	double sum = 0.0;
