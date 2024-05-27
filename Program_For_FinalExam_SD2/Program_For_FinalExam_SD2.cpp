@@ -138,7 +138,8 @@ void SumNegative(const int SIZE1, const int SIZE2)
 	cout << "Sum of negatives is " << sum << endl;
 }
 /**
- * <code>SumNegative</code> Calculates a sum of all negatives numbers in matrix
+ * <code>CountElements</code> Counts how many element with value -2.5 are in the matrix
+ * 
  * <BR>
  * @param SIZE1 Constant size of rows in matrix
  * @param SIZE2 Constant size of columns in matrix
