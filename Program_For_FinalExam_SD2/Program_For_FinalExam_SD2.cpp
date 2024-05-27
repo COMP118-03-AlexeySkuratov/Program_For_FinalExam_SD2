@@ -12,7 +12,7 @@ using namespace std;
 
 void FillMatrix(const int, const int);
 void ShowMatrix(const int, const int);
-void SumNegative(const int, const int);
+//void SumNegative(const int, const int);
 
 const int SIZE_ROW = 5;
 const int SIZE_COL = 3;
@@ -42,7 +42,7 @@ int main()
 		ShowMatrix(SIZE_COL, SIZE_ROW);
 		break;
 	case 3:
-		SumNegative(SIZE_COL, SIZE_ROW);
+		//SumNegative(SIZE_COL, SIZE_ROW);
 		break;
 	case 4:
 		cout << "Have a nice day!" << endl;
@@ -53,22 +53,31 @@ int main()
 }
 
 
-void FillMatrix(const int SIZE1, const int SIZE2)
+void FillMatrix(const int SIZE1,const int SIZE2)
 {
 	for (int i = 0; i < SIZE1; i++)
+
 	{
 		for (int j = 0; j < SIZE2; j++)
 		{
-			cout << "Enter a value for [" << i << "] [" << j << "] item" << endl;
-			cin >> matrix[i][j];
+			cout << "Enter a value for [" << j << "] [" << i << "] item" << endl;
+			cin >> matrix[j][i];
 		}
 	}
 
 }
-//void ShowMatrix(double[], const int, const int)
-//{
-//
-//}
+void ShowMatrix(const int SIZE1, const int SIZE2)
+{
+	for (int i = 0; i < SIZE1; i++)
+	{
+
+		for (int j = 0; j < SIZE2; j++)
+		{
+			cout << matrix[j][i] << " ";
+		}
+		cout << endl;
+	}
+}
 //void SumNegative(double[], const int, const int)
 //{
 //
