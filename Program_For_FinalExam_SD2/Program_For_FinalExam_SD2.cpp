@@ -7,6 +7,7 @@
 */
 
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -83,7 +84,7 @@ void ShowMatrix(const int SIZE1, const int SIZE2)
 
 		for (int j = 0; j < SIZE2; j++)
 		{
-			cout << matrix[i][j] << " ";
+			cout << setw(2) << matrix[i][j] << " ";
 		}
 		cout << endl;
 	}
