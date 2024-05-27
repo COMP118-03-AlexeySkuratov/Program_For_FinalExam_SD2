@@ -17,6 +17,8 @@ using namespace std;
 void FillMatrix(const int, const int);
 void ShowMatrix(const int, const int);
 void SumNegative(const int, const int);
+void CountElements(const int, const int);
+
 
 const int SIZE_ROW = 3;
 const int SIZE_COL = 5;
@@ -39,7 +41,8 @@ int main()
 		cout << "1. Enter Data in matrix (range -3.5 to 1.5)" << endl;
 		cout << "2. Show Data in matrix" << endl;
 		cout << "3. Sum of all negatives numbers" << endl;
-		cout << "4. Exit" << endl;
+		cout << "4. Count the number of elements with the value -2.5" << endl;
+		cout << "5. Exit" << endl;
 		cout << "Please, enter your choice: ___" << endl;
 
 		cin >> choice;
@@ -55,6 +58,9 @@ int main()
 			SumNegative(SIZE_ROW, SIZE_COL);
 			break;
 		case 4:
+			CountElements(SIZE_ROW, SIZE_COL);
+			break;
+		case 5:
 			cout << "Have a nice day!" << endl;
 			break;
 		default:
@@ -130,4 +136,25 @@ void SumNegative(const int SIZE1, const int SIZE2)
 		}
 	}
 	cout << "Sum of negatives is " << sum << endl;
+}
+/**
+ * <code>SumNegative</code> Calculates a sum of all negatives numbers in matrix
+ * <BR>
+ * @param SIZE1 Constant size of rows in matrix
+ * @param SIZE2 Constant size of columns in matrix
+ */
+void CountElements(const int SIZE1 , const int SIZE2)
+{
+
+	int counter = 1;
+	for (int i = 0; i < SIZE1; i++)
+	{
+
+		for (int j = 0; j < SIZE2; j++)
+		{
+			if (matrix[i][j] == -2.5)
+				counter++;
+		}
+	}
+	cout << "number of elements with value -2.5: " << counter << endl;
 }
