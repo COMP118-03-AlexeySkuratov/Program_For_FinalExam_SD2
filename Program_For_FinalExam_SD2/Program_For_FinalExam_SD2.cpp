@@ -12,7 +12,7 @@ using namespace std;
 
 void FillMatrix(const int, const int);
 void ShowMatrix(const int, const int);
-//void SumNegative(const int, const int);
+void SumNegative(const int, const int);
 
 const int SIZE_ROW = 5;
 const int SIZE_COL = 3;
@@ -42,7 +42,7 @@ int main()
 			ShowMatrix(SIZE_COL, SIZE_ROW);
 			break;
 		case 3:
-			//SumNegative(SIZE_COL, SIZE_ROW);
+			SumNegative(SIZE_COL, SIZE_ROW);
 			break;
 		case 4:
 			cout << "Have a nice day!" << endl;
@@ -88,7 +88,17 @@ void ShowMatrix(const int SIZE1, const int SIZE2)
 		cout << endl;
 	}
 }
-//void SumNegative(double[], const int, const int)
-//{
-//
-//}
+void SumNegative(const int SIZE1, const int SIZE2)
+{
+	double sum = 0.0;
+	for (int i = 0; i < SIZE1; i++)
+	{
+
+		for (int j = 0; j < SIZE2; j++)
+		{
+			if (matrix[i][j] < 0)
+				sum += matrix[i][j];
+		}
+	}
+	cout << "Sum of negatives is " << sum << endl;
+}
