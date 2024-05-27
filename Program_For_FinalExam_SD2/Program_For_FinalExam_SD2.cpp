@@ -53,9 +53,16 @@ int main()
 }
 
 
-void FillMatrix(double[], const int, const int)
+void FillMatrix(const int SIZE1, const int SIZE2)
 {
-
+	for (int i = 0; i < SIZE1; i++)
+	{
+		for (int j = 0; j < SIZE2; j++)
+		{
+			cout << "Enter a value for [" << i << "] [" << j << "] item" << endl;
+			cin >> matrix[i][j];
+		}
+	}
 
 }
 //void ShowMatrix(double[], const int, const int)
