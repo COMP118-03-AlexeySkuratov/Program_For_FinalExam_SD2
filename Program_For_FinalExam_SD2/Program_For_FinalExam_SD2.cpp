@@ -16,7 +16,7 @@ using namespace std;
 
 void FillMatrix(const int, const int);
 void ShowMatrix(const int, const int);
-void SumNegative(const int, const int);
+double SumNegative(const int, const int, double&);
 
 const int SIZE_ROW = 3;
 const int SIZE_COL = 5;
@@ -31,6 +31,7 @@ double matrix[SIZE_ROW][SIZE_COL] = {0};
 int main()
 {
 	int choice = 0;
+	double sum = 0.0;
 	//Menu implementation
 	do 
 	{
@@ -52,7 +53,7 @@ int main()
 			ShowMatrix(SIZE_ROW, SIZE_COL);
 			break;
 		case 3:
-			SumNegative(SIZE_ROW, SIZE_COL);
+			cout << "Sum of negatives is " << SumNegative(SIZE_ROW, SIZE_COL, sum) << endl;
 			break;
 		case 4:
 			cout << "Have a nice day!" << endl;
@@ -116,18 +117,19 @@ void ShowMatrix(const int SIZE1, const int SIZE2)
  * <BR>
  * @param SIZE1 Constant size of rows in matrix
  * @param SIZE2 Constant size of columns in matrix
+ * @param sum_ref It's a reference to sum variable in main. Contains sum of all negative numbers
  */
-void SumNegative(const int SIZE1, const int SIZE2)
+double SumNegative(const int SIZE1, const int SIZE2, double& sum_ref)
 {
-	double sum = 0.0;
 	for (int i = 0; i < SIZE1; i++)
 	{
 
 		for (int j = 0; j < SIZE2; j++)
 		{
 			if (matrix[i][j] < 0)
-				sum += matrix[i][j];
+				sum_ref += matrix[i][j];
 		}
 	}
-	cout << "Sum of negatives is " << sum << endl;
+	return sum_ref;
+	
 }
