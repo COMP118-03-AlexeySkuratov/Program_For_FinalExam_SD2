@@ -20,48 +20,58 @@ double matrix[SIZE_COL][SIZE_ROW] = {0};
 
 int main()
 {
-
-
-	//Menu implementation
 	int choice = 0;
-
-	cout << "---- M E N U ----" << endl;
-	cout << "1. Enter Data in matrix (range -3.5 to 1.5)" << endl;
-	cout << "2. Show Data in matrix" << endl;
-	cout << "3. Sum of all negatives numbers" << endl;
-	cout << "4. Exit" << endl;
-	cout << "Please, enter your choice: ___" << endl;
-
-	cin >> choice;
-	switch (choice)
+	//Menu implementation
+	do 
 	{
-	case 1:
-		FillMatrix(SIZE_COL, SIZE_ROW);
-		break;
-	case 2:
-		ShowMatrix(SIZE_COL, SIZE_ROW);
-		break;
-	case 3:
-		//SumNegative(SIZE_COL, SIZE_ROW);
-		break;
-	case 4:
-		cout << "Have a nice day!" << endl;
-		break;
-	default:
-		break;
+
+		cout << "---- M E N U ----" << endl;
+		cout << "1. Enter Data in matrix (range -3.5 to 1.5)" << endl;
+		cout << "2. Show Data in matrix" << endl;
+		cout << "3. Sum of all negatives numbers" << endl;
+		cout << "4. Exit" << endl;
+		cout << "Please, enter your choice: ___" << endl;
+
+		cin >> choice;
+		switch (choice)
+		{
+		case 1:
+			FillMatrix(SIZE_COL, SIZE_ROW);
+			break;
+		case 2:
+			ShowMatrix(SIZE_COL, SIZE_ROW);
+			break;
+		case 3:
+			//SumNegative(SIZE_COL, SIZE_ROW);
+			break;
+		case 4:
+			cout << "Have a nice day!" << endl;
+			break;
+		default:
+			break;
+
 	}
+	} while(choice != 4);
 }
 
 
 void FillMatrix(const int SIZE1,const int SIZE2)
 {
+	bool isInputCorrect;
 	for (int i = 0; i < SIZE1; i++)
 
 	{
 		for (int j = 0; j < SIZE2; j++)
 		{
-			cout << "Enter a value for [" << j << "] [" << i << "] item" << endl;
-			cin >> matrix[j][i];
+			isInputCorrect = false;
+			while (!isInputCorrect)
+			{
+				cout << "Enter a value for [" << i << "] [" << j << "] item" << endl;
+				cin >> matrix[i][j];
+				if (matrix[i][j] > -3.5 && matrix[i][j] < 1.5)
+					isInputCorrect = true;
+			}
+
 		}
 	}
 
@@ -73,7 +83,7 @@ void ShowMatrix(const int SIZE1, const int SIZE2)
 
 		for (int j = 0; j < SIZE2; j++)
 		{
-			cout << matrix[j][i] << " ";
+			cout << matrix[i][j] << " ";
 		}
 		cout << endl;
 	}
